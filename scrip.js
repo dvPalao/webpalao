@@ -71,7 +71,7 @@ audio1.play();
 }
 
 function autoStartPalao() {
-setTimeout(startPalao, 8000); 
+setTimeout(startPalao, 18000); 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
