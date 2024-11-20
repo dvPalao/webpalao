@@ -479,7 +479,6 @@
     height: var(--space);
 }
 
-@use "src/styles/utils/conversion" as *;
 
 @keyframes waterfall {
     0% {
@@ -503,90 +502,105 @@
     left: 0;
     margin: 0;
     padding: 0;
-    background: linear-gradient(180deg, #030001 41.67%, #7c7a7a 100%);
+    background: linear-gradient(150deg, #030001 41.67%, #fffffe 100%);
     overflow: hidden;
     z-index: -1;
 }
 
-.background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR) {
+.background:where(.astro-NEXH5IXR) li {
     position: absolute;
     display: block;
     list-style: none;
-    width: 1.25rem;
-    height: 1.25rem;
-    background: rgba(196, 194, 194, 0.13);
-    animation: waterfall 21s linear infinite;
+    width: 1.25rem; 
+    height: 1.25rem; 
+    background: rgba(196, 194, 194, 0.877);
+    border-radius: 50%; 
+    animation: waterfall 11s linear infinite;
+}
+
+@keyframes waterfall {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+        border-radius: 50%; 
+    }
+
+    to {
+        transform: translateY(-62.5rem) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%; 
+    }
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(0) {
     left: 48%;
-    width: 8.875rem;
-    height: 8.875rem;
-    bottom: -8.875rem;
+    width: 4.875rem;
+    height: 4.875rem;
+    bottom: -4.875rem;
     animation-delay: 1s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(1) {
     left: 78%;
-    width: 11.125rem;
-    height: 11.125rem;
-    bottom: -11.125rem;
+    width: 6.125rem;
+    height: 6.125rem;
+    bottom: -6.125rem;
     animation-delay: 1s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(2) {
     left: 73%;
-    width: 10.5625rem;
-    height: 10.5625rem;
-    bottom: -10.5625rem;
+    width: 5.5625rem;
+    height: 5.5625rem;
+    bottom: -5.5625rem;
     animation-delay: 3s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(3) {
     left: 30%;
-    width: 11.9375rem;
-    height: 11.9375rem;
-    bottom: -11.9375rem;
+    width: 6.9375rem;
+    height: 6.9375rem;
+    bottom: -6.9375rem;
     animation-delay: 4s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(4) {
     left: 83%;
-    width: 11.625rem;
-    height: 11.625rem;
-    bottom: -11.625rem;
+    width: 6.625rem;
+    height: 6.625rem;
+    bottom: -6.625rem;
     animation-delay: 5s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(5) {
     left: 29%;
-    width: 10.4375rem;
-    height: 10.4375rem;
-    bottom: -10.4375rem;
+    width: 5.4375rem;
+    height: 5.4375rem;
+    bottom: -5.4375rem;
     animation-delay: 21s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(6) {
     left: 20%;
-    width: 8.3125rem;
-    height: 8.3125rem;
-    bottom: -8.3125rem;
+    width: 4.3125rem;
+    height: 4.3125rem;
+    bottom: -4.3125rem;
     animation-delay: 9s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(7) {
     left: 29%;
-    width: 7.75rem;
-    height: 7.75rem;
-    bottom: -7.75rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    bottom: -3.75rem;
     animation-delay: 24s;
 }
 
 .background:where(.astro-NEXH5IXR) li:where(.astro-NEXH5IXR):nth-child(8) {
     left: 2%;
-    width: 8.5rem;
-    height: 8.5rem;
-    bottom: -8.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    bottom: -4.5rem;
     animation-delay: 11s;
 }
 
@@ -597,12 +611,12 @@
     margin: 2% auto;
     padding: 1rem;
     border-radius: 10px;
-    border: 5px solid #08e438;
-    box-shadow: 1px 1px 75px 50px rgba(0, 0, 0, 0.25);
-    border-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(104, 103, 103));
+    border: 5px solid #00ff37;
+    box-shadow: 1px 1px 75px 50px rgba(255, 255, 255, 0.062);
+    border-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
     border-image-slice: 1;
     border-radius: 1rem;
-    background: linear-gradient(180deg, #030001 41.67%, #7c7a7a 100%);
+    background: linear-gradient(180deg, #030001 41.67%, #000000 100%);
     color: #ffffff;
 }
 
@@ -630,14 +644,14 @@
 }
 
 .scrollbar:where(.astro-UOIGRB3U) {
-    scrollbar-face-color: hsla(228, 6%, 32.5%, 0.5);
+    scrollbar-face-color: hsl(220, 4%, 15%);
     scrollbar-track-color: transparent;
-    scrollbar-color: hsla(228, 6%, 32.5%, 0.5) transparent;
+    scrollbar-color: hsla(240, 2%, 8%, 0.973) transparent;
     scrollbar-width: thin;
 }
 
 .scrollbar:where(.astro-UOIGRB3U):hover {
-    scrollbar-color: hsl(225, 7.1%, 11%) transparent;
+    scrollbar-color: hsl(220, 1%, 43%) transparent;
 }
 
 .scrollbar:where(.astro-UOIGRB3U) .offset:where(.astro-UOIGRB3U) {
@@ -645,7 +659,7 @@
 }
 
 .divider:where(.astro-VXJCJ4QH) {
-    background-color: #4e505880;
+    background-color: #0a0a0afa;
     border: none;
     height: 0.0625rem;
     margin-top: var(--top);

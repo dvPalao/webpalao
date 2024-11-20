@@ -54,14 +54,6 @@ var button = document.getElementById('myButton');
 var texts = ['𝐍𝐨𝐰 𝐥𝐨𝐚𝐝𝐢𝐧𝐠...', '𝐍𝐨𝐰 𝐥𝐨𝐚𝐝𝐢𝐧𝐠....','𝐍𝐨𝐰 𝐥𝐨𝐚𝐝𝐢𝐧𝐠.....', '𝐍𝐨𝐰 𝐥𝐨𝐚𝐝𝐢𝐧𝐠....'];
 var index = 0;
 
-function updateText() {
-    button.innerHTML = texts[index];
-    index = (index + 1) % texts.length;
-}
-
-var intervalId = setInterval(updateText, 400);
-
-
 function startPalao() {
 document.getElementById('intro-screen').style.display = 'none';
 
@@ -111,9 +103,7 @@ window.addEventListener('beforeunload', function() {
 
   window.location.href = window.location.href + '#';
 
-  document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-  });
+
   
   document.addEventListener("keydown", function(e) {
     if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
@@ -130,6 +120,23 @@ window.addEventListener('beforeunload', function() {
   const parallax = document.querySelector('.parallax');
 const images = parallax.querySelectorAll('img');
 
+document.addEventListener('DOMContentLoaded', function() {
+  const parallax = document.querySelector('.parallax');
+  if (parallax) {
+      const images = parallax.querySelectorAll('img');
+      window.addEventListener('scroll', () => {
+          const scrollPosition = window.scrollY;
+          images.forEach((image, index) => {
+              const speed = 0.5 + (index * 0.1);
+              const offset = scrollPosition * speed;
+              image.style.transform = `translateY(${offset}px) scale(${1 + (offset / 100)})`;
+          });
+      });
+  } else {
+      console.error('El elemento .parallax no se encontró en el DOM.');
+  }
+});
+
 window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY;
   images.forEach((image, index) => {
@@ -139,3 +146,21 @@ window.addEventListener('scroll', () => {
   });
 });
 
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault(); 
+});
+
+
+currentTrack.play().catch(error => {
+  console.error("Error al reproducir la pista:", error);
+});
+
+const items = document.querySelectorAll('.astro-NEXH5IXR li');
+items.forEach(item => {
+    const randomX = Math.random() * 100; 
+    const randomY = Math.random() * 100; 
+    item.style.left = `${randomX}vw`;
+    item.style.top = `${randomY}vh`;
+    const randomDelay = Math.random() * 5; 
+    item.style.animationDelay = `${randomDelay}s`;
+});

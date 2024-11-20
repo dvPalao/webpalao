@@ -25,392 +25,13 @@
     <meta property="og:url" content="palao.me" />
 </head>
 
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-
 <body>
-        <div id="intro-screen" style="animation: fadein 55s;">
-          <h1></h1>
-          <button id="myButton" onclick="startPalao()" style="background-color: #00000000; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: none;">𝗜𝗻𝗶𝗰𝗶𝗮𝗿</button>
-        </div>
-      
-        <div id="player"></div>
-        <div id="volume-bar" onclick="adjustVolume(event)">
-          <div id="volume-fill"></div>
-        </div>
-
-        <style>
-#intro-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-}
-</style>
-
-
-
-<!-- <audio id="music1" src="music/audio.mp3"></audio>
-<audio id="music2" src="music/audioCaile.mp3"></audio>
-<audio id="music3" src="music/audio1.mp3"></audio>
-<audio id="music4" src="music/audio2.mp3"></audio>
-<audio id="music5" src="music/untitled.mp3"></audio>
-
-
-
-<script>
-
-
-  function updateText() {
-      button.innerHTML = texts[index];
-      index = (index + 1) % texts.length;
-  }
-
-  var intervalId = setInterval(updateText, 400);
-
-
-function startPalao() {
-  document.getElementById('intro-screen').style.display = 'none';
-
- var audio1 = document.getElementById('music1');
- var audio2 = document.getElementById('music2');
- var audio3 = document.getElementById('music3');
- var audio4 = document.getElementById('music4');
- var audio5 = document.getElementById('music5');
-
-
- audio1.volume = 0.1;
- audio2.volume = 0.1;
- audio3.volume = 0.1;
- audio4.volume = 0.1;
- audio5.volume = 0.1;
-
- audio1.play();
-
- audio1.addEventListener('ended', function() {
-  audio2.play();
-});
-
- audio2.addEventListener('ended', function() {
-  audio3.play();
-});
-
-audio3.addEventListener('ended', function() {
-  audio4.play();
-});
-
-audio4.addEventListener('ended', function() {
-  audio5.play();
-});
-
-audio5.addEventListener('ended', function() {
-  audio1.play();
-});
-
-}
-
-</script> -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
-
-<div class="fixed z-10 left-6 bottom-6">
-    <div class="relative z-10 flex items-center px-3 py-3 border-2 border-black rounded-md music-container bg-neutral-100">
-        <div class="border-2 border-black toggle-player bg-neutral-100">
-            <img class="w-full" src="icons/close.svg" alt="">
-        </div>
-        <div class="absolute avatar w-14">
-            <img class="w-full bg-white border-2 border-black rounded-md" src="icons/pinkheart.png" alt="">
-        </div>
-        <div class="player">
-            <div class="sound-bars-lottie">
-                <div class="sound-bars"></div>
-            </div>
-            <div class="-space-y-1 track-info">
-                <div class="trackname">Amor sin Contrato</div>
-                <div class="trackartist">Track Artist</div>
-            </div>
-            <div class="track-nav">
-                <div class="prev-track">
-                    <img class="w-7" src="icons/backplayer.svg" alt="">
-                </div>
-                <div class="playpause-track">
-                    <img class="w-8" src="icons/play.svg" alt="">
-                </div>
-                <div class="next-track">
-                    <img class="w-7" style="transform: rotate(180deg);" src="icons/backplayer.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<style>
-
-  .music-container{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 530px;
-    z-index: 1;
-    transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-
-  .player{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    width: 100%;
-    height: 70px;
-  }
-
-  .track-info{
-    position: absolute;
-    top: 0;
-    left: -.3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    transition: all .25s ease;
-  }
-
-  .trackname{
-    font-size: 1.5rem;
-    font-weight: bold;
-    pointer-events: none;
-  }
-  .trackartist{
-    font-size: .8rem;
-    pointer-events: none;
-  }
-  .track-nav{
-    gap: .2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all .25s ease;
-  }
-
-  .music-container.hide {
-    width: 140px;
-  }
-
-  .music-container.hide .track-info,
-  .music-container.hide .track-nav {
-    transition: all 0s ease;
-    opacity: 0;
-  }
-
-  .toggle-player{
-    position: absolute;
-    right: -1rem;
-    top: -1rem;
-    width: 2rem;
-    z-index: 2;
-    border-radius: 100%;
-    cursor: pointer;
-  }
-
-  .sound-bars-lottie{
-    position: absolute;
-    top: 1.1rem;
-    left: 4.5rem;
-  }
-  .sound-bars{
-    width: 100%;
-    width: 60px;
-    height: 60px;
-  }
-  .prev-track, .playpause-track, .next-track{
-    cursor: pointer;
-    z-index: 100;
-    border-radius: 100%;
-    padding: .3rem;
-  }
-
-  .prev-track:hover, .playpause-track:hover, .next-track:hover{
-    background-color: rgb(190, 190, 190);
-    transition-duration: .5s;
-  }
-
-</style>
-
-<script>
-
-let musicPlayer = document.querySelector(".music-container");
-let togglePlayer = document.querySelector(".toggle-player");
-
-let trackInfo = document.querySelector(".track-info");
-let trackName = document.querySelector(".trackname");
-let trackArtist = document.querySelector(".trackartist");
-let trackNav = document.querySelector(".track-nav");
-
-let playPauseBtn = document.querySelector(".playpause-track");
-let nextBtn = document.querySelector(".next-track");
-let prevBtn = document.querySelector(".prev-track");
-
-let trackIndex = 0;
-let isPlaying = false;
-let isHidden = true;
-
-let currentTrack = document.createElement("audio");
-currentTrack.volume = 0.2;
-let soundBars = document.querySelector(".sound-bars");
-
-togglePlayer.addEventListener("click", function() {
-    isHidden = !isHidden;
-    if(isHidden){
-        musicPlayer.classList.remove("hide");
-        togglePlayer.innerHTML = '<img class="w-[98%]" src="icons/close.svg">';
-        trackInfo.style.transitionDelay = "0.4s";
-        trackNav.style.transitionDelay = "0.4s";
-    } else {
-        musicPlayer.classList.add("hide");
-        togglePlayer.innerHTML = '<img class="w-full" src="icons/plus.svg">';
-        trackInfo.style.transitionDelay = "0s";
-        trackNav.style.transitionDelay = "0s";
-    }
-});
-
-let soundBarsLottie = bodymovin.loadAnimation({
-    container: soundBars,
-    renderer: "svg",
-    loop: true,
-    autoPLay: false,
-    path: "https://lottie.host/9ec12a7e-e429-453a-9f22-a2af1dcb4dca/2zeuy4rwtP.json",
-});
-
-
-let trackList = [
-    {
-        name: "Vicio",
-        artist: "Yafett, Heavy Coste",
-        path: "/music/audio.mp3",
-    },
-    {
-        name: "Estaba Borracho",
-        artist: "Gonzalo Genek, Valeria, Heavy Coste",
-        path: "./music/audio1.mp3",
-    },
-    {
-        name: "Quisiera Aguantármelo",
-        artist: "Heavy Coste, M.Timére, Maylo",
-        path: "./music/audio2.mp3",
-    },
-    {
-        name: "Caile",
-        artist: "VALERIA, Gonzalo Genek",
-        path: "./music/audioCaile.mp3",
-    },
-    {
-        name: "Untitled",
-        artist: "????????",
-        path: "./music/untitled.mp3",
-    },
-];
-playPauseBtn.addEventListener("click", playPauseTrack);
-nextBtn.addEventListener("click", nextTrack);
-prevBtn.addEventListener("click", prevTrack);
-
-function loadTrack(trackIndex){
-    currentTrack.src = trackList[trackIndex].path;
-    trackName.textContent = trackList[trackIndex].name;
-    trackArtist.textContent = trackList[trackIndex].artist;
-    currentTrack.addEventListener("ended", nextTrack);
-    currentTrack.load();
-}
-
-loadTrack(trackIndex);
-
-function playPauseTrack(){
-    if(isPlaying == false){
-        playTrack();
-    }else{
-        pauseTrack();
-    }
-}
-
-function playTrack(){
-    currentTrack.play();
-    isPlaying = true;
-    playPauseBtn.innerHTML = '<img class="w-8" src="icons/pause.svg">';
-    soundBarsLottie.play();
-}
-
-function pauseTrack(){
-    currentTrack.pause();
-    isPlaying = false;
-    playPauseBtn.innerHTML = '<img class="w-8" src="icons/play.svg">';
-    soundBarsLottie.stop();
-}
-
-function nextTrack(){
-    if(trackIndex < trackList.length - 1){
-        trackIndex += 1;
-        loadTrack(trackIndex);
-        playTrack();
-    }else{
-        trackIndex = 0;
-        loadTrack(trackIndex);
-        playTrack();
-    } 
-}
-
-function prevTrack(){
-    if(trackIndex > 0){
-        trackIndex -= 1;
-        loadTrack(trackIndex);
-        playTrack();
-    }else{
-        trackIndex = trackList.length - 1;
-        loadTrack(trackIndex);
-        playTrack();
-    }
-}
-</script>
-
-
-
-
-
 
     <div class="flex astro-G3JJ5IRR card astro-5DD63B5N" style="--gap: 0rem;">
-
-
         <div class="top-section astro-QLFJKSAO">
             <header class="astro-QLFJKSAO">
-                <div class="upper astro-BCR4GW6E" style="">
-                    <div class="astro-BCR4GW6E banner" style="width: 1280px; height: 239px; overflow: hidden;">
+                <div class="upper astro-BCR4GW6E">
+                    <div class="astro-BCR4GW6E banner" style="width: 1280px; height: 250px; overflow: hidden;">
                         <video class="astro-BCR4GW6E banner" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
                             <source src="/Banner.mp4" type="video/mp4">
                         </video>
@@ -421,7 +42,7 @@ function prevTrack(){
                 <img class="avatar levitate astro-DTRUHEB4 astro-IUSYWDOF" alt="Avatar" width="118" height="158"
                     src="/Profile.jpg" width="118" height="158" loading="lazy" decoding="async">
                 <div class="flex astro-G3JJ5IRR status levitate astro-DTRUHEB4"
-                    style="--justify: flex-end;--align: flex-end;--gap: 5rem;">
+                    style="--justify: flex-end;--align: flex-end;--gap: 15rem;">
                     <div class="tooltip-wrapper astro-DTRUHEB4 astro-22G2KZDE astro-M2P5XHDA">
                         <div class="tooltip-content astro-M2P5XHDA">
                             <div class="tooltip astro-M2P5XHDA" role="tooltip">
@@ -520,7 +141,7 @@ function prevTrack(){
 
                             <!-- Your About Me section -->
 
-                            <p><a href="www.palao.me">palao.me</a>
+                            <p><a href="www.palao.me">www.palao.me</a>
                             </p>
 
                             <p>Everybody lies,
@@ -740,7 +361,7 @@ function prevTrack(){
                                 <div class="tooltip-wrapper astro-UBXOC6MX astro-M2P5XHDA">
                                     <div class="tooltip-content astro-M2P5XHDA">
                                         <div class="tooltip astro-M2P5XHDA" role="tooltip">
-                                            CyberJustu
+                                            Riot
                                         </div>
                                         <div class="arrow astro-M2P5XHDA"></div>
                                     </div>
@@ -801,7 +422,6 @@ function prevTrack(){
 
     </div>
     <ul class="background astro-NEXH5IXR">
-
         <li id="0" class="astro-NEXH5IXR"></li>
         <li id="1" class="astro-NEXH5IXR"></li>
         <li id="2" class="astro-NEXH5IXR"></li>
@@ -810,8 +430,338 @@ function prevTrack(){
         <li id="5" class="astro-NEXH5IXR"></li>
         <li id="6" class="astro-NEXH5IXR"></li>
         <li id="7" class="astro-NEXH5IXR"></li>
-
+        <li id="8" class="astro-NEXH5IXR"></li>
+        <li id="9" class="astro-NEXH5IXR"></li>
+        <li id="10" class="astro-NEXH5IXR"></li>
+        <li id="11" class="astro-NEXH5IXR"></li>
+        <li id="12" class="astro-NEXH5IXR"></li>
+        <li id="13" class="astro-NEXH5IXR"></li>
+        <li id="14" class="astro-NEXH5IXR"></li>
+        <li id="15" class="astro-NEXH5IXR"></li>
     </ul>
+
+    <body>
+        <div id="intro-screen" style="animation: fadein 15s;">
+            <h1></h1>
+            <button id="myButton" onclick="startPalao()" style="background-color: #00000000; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">𝗜𝗻𝗶𝗰𝗶𝗮𝗿</button>
+        </div>
+    
+        <div class="fixed z-10 left-6 bottom-6">
+            <div class="relative z-10 flex items-center px-3 py-3 border-2 border-black rounded-md music-container bg-neutral-100">
+                <div class="border-2 border-black toggle-player bg-neutral-100">
+                    <img class="w-full" src="icons/close.svg" alt="">
+                </div>
+                <div class="absolute avatar w-14">
+                    <img class="w-full bg-white border-2 border-black rounded-md" src="icons/pinkheart.png" alt="">
+                </div>
+                <div class="player">
+                    <div class="sound-bars-lottie">
+                        <div class="sound-bars"></div>
+                    </div>
+                    <div class="-space-y-1 track-info">
+                        <div class="trackname">Amor sin Contrato</div>
+                        <div class="trackartist">Track Artist</div>
+                    </div>
+                    <div class="track-nav">
+                        <div class="prev-track">
+                            <img class="w-7" src="icons/backplayer.svg" alt="">
+                        </div>
+                        <div class="playpause-track">
+                            <img class="w-8" src="icons/play.svg" alt="">
+                        </div>
+                        <div class="next-track">
+                            <img class="w-7" style="transform: rotate(180deg);" src="icons/backplayer.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+      <style>
+#intro-screen {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgb(0, 0, 0);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+z-index: 9999;
+}
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+
+
+    <style>
+    
+      .music-container{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 530px;
+        z-index: 1;
+        transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    
+      .player{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+      }
+    
+      .track-info{
+        position: absolute;
+        top: 0;
+        left: -.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        transition: all .25s ease;
+      }
+    
+      .trackname{
+        font-size: 1.5rem;
+        font-weight: bold;
+        pointer-events: none;
+      }
+      .trackartist{
+        font-size: .8rem;
+        pointer-events: none;
+      }
+      .track-nav{
+        gap: .2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: all .25s ease;
+      }
+    
+      .music-container.hide {
+        width: 140px;
+      }
+    
+      .music-container.hide .track-info,
+      .music-container.hide .track-nav {
+        transition: all 0s ease;
+        opacity: 0;
+      }
+    
+      .toggle-player{
+        position: absolute;
+        right: -1rem;
+        top: -1rem;
+        width: 2rem;
+        z-index: 2;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+    
+      .sound-bars-lottie{
+        position: absolute;
+        top: 1.1rem;
+        left: 4.5rem;
+      }
+      .sound-bars{
+        width: 100%;
+        width: 60px;
+        height: 60px;
+      }
+      .prev-track, .playpause-track, .next-track{
+        cursor: pointer;
+        z-index: 100;
+        border-radius: 100%;
+        padding: .3rem;
+      }
+    
+      .prev-track:hover, .playpause-track:hover, .next-track:hover{
+        background-color: rgb(255, 255, 255);
+        transition-duration: .5s;
+      }
+    
+    </style>
+
+<script>
+function startPalao() {
+    document.getElementById('intro-screen').style.display = 'none';
+    if (!isPlaying) { // Solo iniciar si no está reproduciendo
+        loadTrack(trackIndex);
+        playTrack();
+    }
+}
+
+
+    let musicPlayer = document.querySelector(".music-container");
+    let togglePlayer = document.querySelector(".toggle-player");
+
+    let trackInfo = document.querySelector(".track-info");
+    let trackName = document.querySelector(".trackname");
+    let trackArtist = document.querySelector(".trackartist");
+    let trackNav = document.querySelector(".track-nav");
+
+    let playPauseBtn = document.querySelector(".playpause-track");
+    let nextBtn = document.querySelector(".next-track");
+    let prevBtn = document.querySelector(".prev-track");
+
+    let trackIndex = 0;
+    let isPlaying = false;
+    let isHidden = true;
+
+    let currentTrack = document.createElement("audio");
+    currentTrack.volume = 0.2;
+    let soundBars = document.querySelector(".sound-bars");
+
+    togglePlayer.addEventListener("click", function() {
+        isHidden = !isHidden;
+        if(isHidden){
+            musicPlayer.classList.remove("hide");
+            togglePlayer.innerHTML = '<img class="w-[98%]" src="icons/close.svg">';
+            trackInfo.style.transitionDelay = "0.4s";
+            trackNav.style.transitionDelay = "0.4s";
+        } else {
+            musicPlayer.classList.add("hide");
+            togglePlayer.innerHTML = '<img class="w-full" src="icons/plus.svg">';
+            trackInfo.style.transitionDelay = "0s";
+            trackNav.style.transitionDelay = "0s";
+        }
+    });
+
+    let soundBarsLottie = bodymovin.loadAnimation({
+        container: soundBars,
+        renderer: "svg",
+        loop: true,
+        autoPlay: false,
+        path: "https://lottie.host/9ec12a7e-e429-453a-9f22-a2af1dcb4dca/2zeuy4rwtP.json",
+    });
+
+    let trackList = [
+        {
+            name: "Khé?",
+            artist: "Rauw Alejandro & Romeo Santos",
+            path: "/music/khe.mp3",
+        },
+        {
+            name: "Vicio",
+            artist: "Yafett, Heavy Coste",
+            path: "/music/audio.mp3",
+        },
+        {
+            name: "Estaba Borracho",
+            artist: "Gonzalo Genek, Valeria, Heavy Coste",
+            path: "./music/audio1.mp3",
+        },
+        {
+            name: "DALE CONTACTO",
+            artist: "once",
+            path: "./music/DALE CONTACTO.mp3",
+        },
+        {
+            name: "Quisiera Aguantármelo",
+            artist: "Heavy Coste, M.Timére, Maylo",
+            path: "./music/audio2.mp3",
+        },
+        {
+            name: "Caile",
+            artist: "VALERIA, Gonzalo Genek",
+            path: "./music/audioCaile.mp3",
+        },
+        {
+            name: "Untitled",
+            artist: "????????",
+            path: "./music/untitled.mp3",
+        },
+    ];
+
+    playPauseBtn.addEventListener("click", playPauseTrack);
+    nextBtn.addEventListener("click", nextTrack);
+    prevBtn.addEventListener("click", prevTrack);
+
+    function loadTrack(trackIndex) {
+    currentTrack.src = trackList[trackIndex].path; 
+    trackName.textContent = trackList[trackIndex].name; 
+    trackArtist.textContent = trackList[trackIndex].artist; 
+    currentTrack.load();
+
+    currentTrack.removeEventListener("ended", nextTrack); // Elimina el evento anterior
+    currentTrack.addEventListener("ended", nextTrack); // Agrega el evento para la nueva pista
+}
+
+function nextTrack() {
+    trackIndex = (trackIndex + 1) % trackList.length; // Incrementa el índice y vuelve al inicio si es necesario
+    loadTrack(trackIndex); // Carga la nueva pista
+    playTrack(); // Reproduce la nueva pista
+}
+
+function playTrack() {
+    currentTrack.play().then(() => {
+        isPlaying = true;
+        playPauseBtn.innerHTML = '<img class="w-8" src="icons/pause.svg">';
+        soundBarsLottie.play();
+    }).catch(error => {
+        console.error("Error al intentar reproducir la pista:", error);
+    });
+}
+
+    loadTrack(trackIndex);
+
+    function playPauseTrack(){
+        if(isPlaying == false){
+            playTrack();
+        }else{
+            pauseTrack();
+        }
+    }
+
+    function pauseTrack(){
+        currentTrack.pause();
+        isPlaying = false;
+        playPauseBtn.innerHTML = '<img class="w-8" src="icons/play.svg">';
+        soundBarsLottie.stop();
+    }
+
+    function prevTrack(){
+        if(trackIndex > 0){
+            trackIndex -= 1;
+            loadTrack(trackIndex);
+            playTrack();
+        }else{
+            trackIndex = trackList.length - 1;
+            loadTrack(trackIndex);
+            playTrack();
+        }
+    }
+
+    togglePlayer.addEventListener("click", function() {
+        isHidden = !isHidden;
+        if (!isHidden) {
+            musicPlayer.classList.remove("hide");
+            togglePlayer.innerHTML = '<img class="w-[98%]" src="icons/close.svg">';
+            trackInfo.style.transitionDelay = "0.4s";
+            trackNav.style.transitionDelay = "0.4s";
+            if (!isHidden) startPalao(); // Start music when intro is hidden
+        } else {
+            musicPlayer.classList.add("hide");
+            togglePlayer.innerHTML = '<img class="w-full" src="icons/plus.svg">';
+            trackInfo.style.transitionDelay = "0s";
+            trackNav.style.transitionDelay = "0s";
+        }
+    });
+</script>
+
 
 </body>
 
