@@ -13,6 +13,10 @@ const colors = [
   "#ffffff",
 ];
 
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault(); 
+});
+
 circles.forEach(function (circle, index) {
   circle.x = 0;
   circle.y = 0;
@@ -144,10 +148,6 @@ window.addEventListener('scroll', () => {
     const offset = scrollPosition * speed;
     image.style.transform = `translateY(${offset}px) scale(${1 + (offset / 100)})`;
   });
-});
-
-document.addEventListener('contextmenu', function(event) {
-  event.preventDefault(); 
 });
 
 
