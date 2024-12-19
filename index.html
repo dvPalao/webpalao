@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="icon" type="image/x-icon" href="./assets/favico/default.ico">
+<link rel="icon" type="image/x-icon" href="./assets/favico/icon.png">
 </head>
 
   <div class="fixed z-10 left-6 bottom-6">
@@ -31,7 +31,7 @@
                   <div class="prev-track">
                       <img class="w-7" src="icons/backplayer.svg" alt="">
                   </div>
-                  <div class="playpause-track">
+                  <div class="playpause-track" aria-label="Play/Pause track">
                       <img class="w-8" src="icons/play.svg" alt="">
                   </div>
                   <div class="next-track">
@@ -50,7 +50,7 @@
           width: 530px;
           z-index: 1;
           transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
-          background-color: #4d4d4d;
+          background-color: #ffffff;
       }
 
       .player {
@@ -132,10 +132,10 @@
           padding: .3rem;
       }
 
-      .prev-track:hover, .playpause-track:hover, .next-track:hover {
-          background-color: rgb(255, 255, 255);
-          transition-duration: .5s;
-      }
+.prev-track:hover, .playpause-track:hover, .next-track:hover {
+    background-color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease;
+}
   </style>
 
   <script>
@@ -169,6 +169,36 @@
 
       let trackList = [
           {
+              name: "Siempre en el Top",
+              artist: "Gonzalo Genek",
+              path: "./assets/music/Siempre en el Top.mp3",
+          },
+          {
+              name: "Caile",
+              artist: "Gonzalo Genek, Valeria",
+              path: "./assets/music/Caile.mp3",
+          },
+          {
+              name: "Dale contacto",
+              artist: "Once",
+              path: "./assets/music/DALE CONTACTO.mp3",
+          },
+          {
+              name: "Vicio",
+              artist: "Yafett, Heavy Coste",
+              path: "./assets/music/Vicio.mp3",
+          },
+          {
+              name: "Como Duele",
+              artist: "Heavy Coste",
+              path: "./assets/music/Como Duele.mp3",
+          },
+          {
+              name: "Q. Aguantármelo",
+              artist: "Heavy Coste, M.Timére, Maylo",
+              path: "./assets/music/Quisiera Aguantármelo.mp3",
+          },
+          {
               name: "Khé?",
               artist: "Rauw Alejandro & Romeo Santos",
               path: "./assets/music/Khe.mp3",
@@ -179,24 +209,9 @@
               path: "./assets/music/Amar De Nuevo.mp3",
           },
           {
-              name: "Vicio",
-              artist: "Yafett, Heavy Coste",
-              path: "./assets/music/audio.mp3",
-          },
-          {
               name: "Estaba Borracho",
               artist: "Nodeal",
-              path: "./assets/music/audio1.mp3",
-          },
-          {
-              name: "Caile",
-              artist: "Gonzalo Genek, Valeria",
-              path: "./assets/music/audioCaile.mp3",
-          },
-          {
-              name: "Dale contacto",
-              artist: "Once",
-              path: "./assets/music/DALE CONTACTO.mp3",
+              path: "./assets/music/Estaba Borracho.mp3",
           },
           {
               name: "Fue amor",
@@ -316,15 +331,17 @@ currentTrack.removeEventListener("ended", nextTrack); // Elimina el evento anter
       Your browser does not support HTML5 video.
     </video>
     <div id="blurred-box">
-      <img src="./assets/pfp/default.jpg" alt="Profile Picture"> <!-- Profile picture -->
-      <p id="username" style="color: white; font-weight: bold; font-size: large;">PaLao ᚾ</p> <!-- Username -->
-      <!-- User Description -->
-      <div class="user-description">
-        <p id="user-description" style="color: white;"> Pura g5, ag </p>
-      </div>
-      <div class="user-description">
-        <p id="user-description" style="color: white;"> ִֶָ࣪☾. </p>
-      </div>
+        <img id="profilePicture" class="profile-picture" src="./assets/pfp/default.jpg" alt="Profile Picture"> <!-- Profile picture -->      <p id="username" class="username">PaLao ᚾ</p> <!-- Username -->      <!-- User Description -->
+        <div class="user-description">
+            <p id="user-description" style="color: white;">
+                <a href="https://www.instagram.com/nodealoficial/" target="_blank" style="color: white; text-decoration: none;">SALMNF#25</a>
+            </p>
+        </div>
+    <div class="user-description">
+        <p id="user-description" style="color: white;">
+            <a href="https://open.spotify.com/intl-es/track/1Hrucz5n0cjYuPApCk8VkL?si=dc3174c4fe1b4bc9" target="_blank" style="color: white; text-decoration: none;">love&pain can’t exist wthout the other</a>
+        </p>
+    </div>
       <!-- Links -->
       <div class="links">
         <a href="https://discord.com/users/754554380581208094" target="_blank">

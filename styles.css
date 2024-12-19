@@ -19,18 +19,20 @@ body {
   left: 50px; /* Adjust initial left position as needed */
   width: 600px; /* Fixed width */
   height: 400px; /* Fixed height */
-  background-color: #1e1e1e; /* Terminal background color */
-  color: #ffffff; /* Terminal text color */
-  border-radius: 10px; /* Rounded corners */
+  background-color: #ffffff; /* Terminal background color */
+  color: #000000; /* Terminal text color */
+  border-radius: 15px; /* Rounded corners */
   z-index: 1000; /* Ensure it's above other elements */
-  border: 2px solid #4d4d4d; /* Terminal border color */
+  border: 2px solid #000000; /* Terminal border color */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Terminal shadow */
 }
 
 @media screen and (max-width: 600px) {
-  /* Adjust styles for smaller screens, such as phones */
+  .music-container {
+      width: 100%; /* Ajusta el ancho del reproductor */
+  }
   #terminal {
-      max-width: 90%; /* Increase width for smaller screens */
+      width: 90%; /* Ajusta el ancho de la terminal */
   }
 }
 /* Terminal header styles */
@@ -160,7 +162,7 @@ body {
   transform: translate(-50%, -50%);
   width: 30%; /* Adjust width as needed */
   height: 40%; /* Adjust height as needed */
-  background-color: rgba(255, 255, 255, 0); /* Transparent background */
+  background-color: rgba(0, 0, 0, 0.582); /* Transparent background */
   border-radius: 20px; /* Rounded corners */
   border: 2px solid rgba(255, 255, 255, 0); /* Dark border with transparency */
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.5); /* Slightly blurred shadow */
@@ -174,7 +176,7 @@ body {
 
 /* Blurred box hover effect */
 #blurred-box:hover {
-  background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background on hover */
+  background-color: rgb(0, 0, 0); /* Semi-transparent background on hover */
 }
 
 /* Profile picture styles */
@@ -207,7 +209,7 @@ body {
 
 /* Link hover effect */
 .links a:hover {
-  color: #313031;
+  color: #ffffff;
 }
 
 .links a i {
@@ -236,4 +238,74 @@ body {
 /* User description hover effect */
 .user-description:hover p {
   background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background on hover */
+}
+
+.username {
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  position: absolute; /* Permite posicionar el elemento de manera absoluta */
+  top: 75%; /* Ajusta la posición vertical */
+  left: 50%; /* Ajusta la posición horizontal */
+  transform: translate(-50%, -50%); /* Centra el texto */
+}
+
+/* Ejemplo de otras posiciones */
+.username.top-left {
+  top: 10px;
+  left: 10px;
+  transform: none; /* No centrar */
+}
+
+.username.top-right {
+  top: 10px;
+  right: 10px;
+  transform: none; /* No centrar */
+}
+
+.username.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  transform: none; /* No centrar */
+}
+
+.username.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  transform: none; /* No centrar */
+}
+
+.profile-picture {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: 100px; /* Ajusta el tamaño según sea necesario */
+  border-radius: 10%; /* Bordes redondeados */
+  position: absolute; /* Permite posicionar el elemento de manera absoluta */
+  top: 57%; /* Ajusta la posición vertical */
+  left: 50%; /* Ajusta la posición horizontal */
+  transform: translate(-50%, -50%); /* Centra la imagen */
+}
+
+/* Ejemplo de otras posiciones */
+.profile-picture.top-left {
+  top: 10px;
+  left: 10px;
+  transform: none; /* No centrar */
+}
+
+.profile-picture.top-right {
+  top: 10px;
+  right: 10px;
+  transform: none; /* No centrar */
+}
+
+.profile-picture.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  transform: none; /* No centrar */
+}
+
+.profile-picture.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  transform: none; /* No centrar */
 }
